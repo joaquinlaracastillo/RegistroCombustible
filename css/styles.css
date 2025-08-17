@@ -1,0 +1,231 @@
+/* Estilos generales */
+:root {
+  --primary-color: #479ec4;
+  --secondary-color: #47a0dc;
+  --accent-color: #e74c3c;
+  --light-color: #ecf0f1;
+  --dark-color: #2c3e50;
+  --success-color: #3700ff;
+  --warning-color: #f32112;
+  --danger-color: #e74c3c; /* Añadido color rojo para botones peligrosos */
+  --border-radius: 4px;
+  --box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  justify-content: center;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.header-logo {
+  height: 60px;
+  width: auto;
+  filter: brightness(0) invert(1); /* Convierte el logo a blanco */
+  transition: transform 0.3s ease;
+}
+
+.header-title-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-title {
+  margin-bottom: 0.3rem;
+  line-height: 1.2;
+}
+
+.header-subtitle {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+h1, h2, h3 {
+  margin-bottom: 1rem;
+}
+
+/* Formularios */
+form {
+  background: white;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-bottom: 2rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* Botones */
+button {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+button#btnLimpiar {
+  background-color: var(--warning-color);
+}
+
+button#btnLimpiar:hover {
+  background-color: #e67e22;
+}
+
+button#btnDescargar {
+  background-color: var(--success-color);
+}
+
+button#btnDescargar:hover {
+  background-color: #219653;
+}
+
+/* Nuevo estilo para el botón Borrar Todo */
+button#btnBorrarTodo {
+  background-color: var(--danger-color);
+}
+
+button#btnBorrarTodo:hover {
+  background-color: #c0392b;
+}
+
+/* Tabla de registros */
+#tablaEquipos {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background: white;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+#tablaEquipos th,
+#tablaEquipos td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+#tablaEquipos th {
+  background-color: var(--primary-color);
+  color: white;
+  position: sticky;
+  top: 0;
+}
+
+#tablaEquipos tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#tablaEquipos tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Secciones */
+section {
+  margin-bottom: 2rem;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  margin: 2rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+  
+  #tablaEquipos {
+    display: block;
+    overflow-x: auto;
+  }
+  
+  .botones {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Grid para formulario de camión */
+@media (min-width: 992px) {
+  #formCamion {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  
+  #formCamion div {
+    margin-bottom: 0;
+  }
+}
