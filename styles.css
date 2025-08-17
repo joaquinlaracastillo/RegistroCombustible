@@ -33,6 +33,38 @@ header {
   margin-bottom: 2rem;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
+  display: flex;
+  justify-content: center;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.header-logo {
+  height: 60px;
+  width: auto;
+  filter: brightness(0) invert(1); /* Convierte el logo a blanco */
+  transition: transform 0.3s ease;
+}
+
+.header-title-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-title {
+  margin-bottom: 0.3rem;
+  line-height: 1.2;
+}
+
+.header-subtitle {
+  font-size: 0.9rem;
+  opacity: 0.9;
 }
 
 h1, h2, h3 {
